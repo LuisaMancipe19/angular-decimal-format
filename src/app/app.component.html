@@ -1,7 +1,14 @@
-<h1>Formato numérico</h1>
-
-<form [formGroup]="form">
-  <input type="text" formControlName="numero" appDecimalFormat />
+<form [formGroup]="formPositive">
+  <h2>Formato numérico positivo</h2>
+    <div class="input-group">
+      <input type="text" formControlName="positive" appDecimalFormat />
+    </div>
+    <p>Valor formateado: {{ formPositive.get('positive')?.value }}</p>
 </form>
-
-<p>Valor formateado: {{ form.get('numero')?.value }}</p>
+<form [formGroup]="formNegative">
+  <h2>Formato numérico negativo</h2>
+  <div>
+    <input type="text" formControlName="negative" appDecimalFormatNegative />
+  </div>
+  <p>Valor formateado: {{ formNegative.get('negative')?.value }}</p>
+</form>
