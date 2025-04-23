@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { DecimalFormatDirective } from './directives/decimal-format.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [ReactiveFormsModule, DecimalFormatDirective],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'angular-decimal-directive';
+  form = new FormGroup({
+    numero: new FormControl(''),
+  });
 }
